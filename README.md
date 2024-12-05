@@ -1,44 +1,20 @@
-README!!!
+This script is made to install and configure Debian server services automatically and dynamically.
+The installed server services include:
+1. SSH
+2. Samba
+3. DNS Server (Bind9)
+4. WebServer (Apache2)
+5. Dovecot
+6. Postfix
+7. Mariadb-Server
+8. Roundcube
 
-[INFO] 
-=================== Main Script ==========================
-Script ini dibuat agar dapat memudahkan user dalam melakukan installasi & konfigurasi layanan server pada Debian Linux.
+[how to do it]
+1. import the file into the server
+2. give execution permission to the file
+(   chmod -x file_name   
+3. run the file
+(   [Path]/file_name   )
 
-Script ini mendukung penggunaan yang dynamis yang bisa menyesesuaikan kebutuhan user.
-
-Berikut layanan server yang diinstall & dikonfigurasi mencangkup:
-networking, ssh, samba, bind9, apache2, dovecot, postfix, roundcube, dhcp server
-
-[How To Do]
-1. Tambahkan Script ke Terminal. Bisa menggunakan samba & proftpd server
-		(Disarankan menggunakan proftpd)
-
-2. Masuk Ke Direktory Script
-Gunakan perintah cd untuk berpindah ke direktori tempat file script berada.
-
-2. Beri Izin Eksekusi
-Sebelum menjalankan script, Anda perlu memberikan izin eksekusi pada file tersebut. Gunakan perintah chmod:
-		chmod +x "Auto-install-all(A).sh"
-
-3. Jalankan Script
-Setelah memberikan izin eksekusi, Anda dapat menjalankan script dengan perintah berikut:
-		./Auto-install-all(A).sh
-
-
-### Catatan Penting!!!
-	# Pastikan Anda menjalankan terminal dengan hak akses yang sesuai.  	script memerlukan akses root
-
-	# Sebaiknya anda menambahkan ISO DVD2 & DVD3 terlebih dahulu
-		
-	# Scipt ini memiliki beberapa validasi namun, validasi tersebut 	tidaklah kuat jadi sebaiknya anda mengisi input dengan benar!!!
-
-	# Jangan menjalankan script lebih dari sekali karena akan ada beberapa 	pengaturan yang akan double sehingga menyebabkan "failed restart"
-	
-	# Kesalahan validasi sering kali dimasukan kedalam konfigurasi.
-
-[Trobleshot]!!!!
-####	lokasi dari kemungkinan terjadinya double konfigurasi & validasi 	kesalahan user tidak sengaja di input:
-			- /etv/bind/named.conf.default-zone
-			- /etc/samba/smbd.conf
-			- /etc/network/interfaces
-			
+[INFO]
+For the restore file there is still a bug in roundcube where it cannot reconfigure or the new configuration is not applied
